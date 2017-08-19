@@ -1,0 +1,3 @@
+### Recursos
+1. [GIT](https://github.com/Area51TrainingCenter/FullStackDeveloper-Group01/tree/master/JavaScript)
+2. [Visual Studio Code](https://github.com/Area51TrainingCenter/FullStackDeveloper-Group01/tree/master/JavaScript)
