@@ -1,0 +1,84 @@
+<!doctype html>
+<html>
+	<head>
+		<style>
+			* {box-sizing: border-box}
+
+			img {width:100%}
+			div {
+				width: 240px;
+				height: 240px;
+				margin: 60px auto;
+				position:relative;
+			}
+
+			article.item {
+				position: absolute;
+				top:0;
+				left:0;
+				transition: all 350ms
+			}
+			article.item.p1 {transform:translateX(0px) scale(1.1);border:1px solid red}
+			article.item.p2 {transform:translateX(-250px);border:1px solid blue}
+			article.item.p3 {transform:translateX(-500px);border:1px solid orange}
+			article.item.p4 {transform:translateX(-750px);border:1px solid navy;opacity:0}
+			article.item.p5 {transform:translateX(250px);border:1px solid pink}
+			article.item.p6 {transform:translateX(500px);border:1px solid skyblue}
+			article.item.p7 {transform:translateX(750px);border:1px solid brown;opacity:0}
+
+		</style>
+	</head>
+	<body>
+		<div>
+			<article class="item"><img src="img/perro.jpg"></article>
+			<article class="item"><img src="img/perro.jpg"></article>
+			<article class="item"><img src="img/perro.jpg"></article>
+			<article class="item"><img src="img/perro.jpg"></article>
+			<article class="item"><img src="img/perro.jpg"></article>
+			<article class="item"><img src="img/perro.jpg"></article>
+			<article class="item"><img src="img/perro.jpg"></article>
+		</div>
+
+		<button id="izquierda">Izquierda</button>
+		<button id="derecha">Derecha</button>
+		<script>
+			const arregloClases = ['p4', 'p3', 'p2', 'p1', 'p5', 'p6', 'p7']
+
+			const btnIzquierda = document.getElementById("izquierda"),
+				  btnDerecha = document.querySelector('#derecha')
+				  // btnDerecha = document.getElementsByTagName("button")[1]
+				  // btnDerecha = document.querySelectorAll("button")[1]
+
+			const articles = document.querySelectorAll("article")
+
+			function asignarClases(){
+				articles.forEach(function(elemento, indice){
+					elemento.classList.remove('p1', 'p2', 'p3', 'p4', 'p5', 'p6', 'p7')
+					elemento.classList.add(arregloClases[indice])
+				})
+			}
+
+			asignarClases()
+
+			setInterval(function(){
+				const elementoExtraido = arregloClases.pop()
+				arregloClases.unshift(elementoExtraido)
+				asignarClases()
+			}, 2000)
+
+			btnIzquierda.addEventListener('click', function(){
+				const elementoExtraido = arregloClases.shift()
+				arregloClases.push(elementoExtraido)
+				console.log(arregloClases)
+				asignarClases()
+			})
+			btnDerecha.addEventListener('click', function(){
+				const elementoExtraido = arregloClases.pop()
+				arregloClases.unshift(elementoExtraido)
+				console.log(arregloClases)
+				asignarClases()
+			})
+
+		</script>
+	</body>
+</html>

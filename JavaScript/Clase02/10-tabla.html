@@ -1,0 +1,60 @@
+<!doctype html>
+<html>
+	<head>
+		<link rel="stylesheet" href="node_modules/bootstrap/dist/css/bootstrap.min.css">
+	</head>
+	<body>
+		<div class="container">
+			<div class="row">
+				<table class="table table-striped table-hover">
+					<thead>
+						<tr>
+							<th>Nombre</th>
+						</tr>
+					</thead>
+					<tbody>
+
+					</tbody>
+				</table>
+			</div>
+		</div>
+		<script>
+			/*const arrNombres = ['Ariana', 'Andrea', 'Carmen', 'Deysi', 'Cynthia']
+
+			const arreglo = arrNombres.sort((elemA, elemB) => elemA < elemB)
+
+			const arregloMayusculas = arreglo.map(item => item.toUpperCase())
+
+			const arregloSaludos = arregloMayusculas.map(item => {
+				return `Srta. ${item}`
+			})
+
+			console.log(arregloSaludos)*/
+
+			const arrNombres = ['Ariana', 'Andrea', 'Carmen', 'Deysi', 'Cynthia']
+
+			const generarFila = elemento => {
+				return `
+					<tr>
+						<td>${elemento}</td>	
+					</tr>
+				`
+			}
+
+			const tbody = document.querySelector("tbody")
+
+			const arreglo = arrNombres
+							.sort((elemA, elemB) => elemA < elemB)
+							.map(item => item.toUpperCase())
+							.map(item => {
+								return `${generarFila(item)}`
+							})
+							.join('')
+			
+			tbody.innerHTML = arreglo
+
+			console.log(arreglo)
+		</script>
+
+	</body>
+</html>
