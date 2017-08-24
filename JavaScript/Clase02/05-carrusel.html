@@ -42,15 +42,19 @@
 		<button id="izquierda">Izquierda</button>
 		<button id="derecha">Derecha</button>
 		<script>
+			// Define las clases que se asignarán a cada item del carrusel
 			const arregloClases = ['p4', 'p3', 'p2', 'p1', 'p5', 'p6', 'p7']
 
+			// Declara y define referencias para los botones
 			const btnIzquierda = document.getElementById("izquierda"),
 				  btnDerecha = document.querySelector('#derecha')
 				  // btnDerecha = document.getElementsByTagName("button")[1]
 				  // btnDerecha = document.querySelectorAll("button")[1]
 
+			// Declara y define una lista que contiene todas las etiquetas "article"
 			const articles = document.querySelectorAll("article")
 
+			// Definición de una función que asigna las clases (contenidas en el arreglo "arregloClases") a los elementos del carrusel
 			function asignarClases(){
 				articles.forEach(function(elemento, indice){
 					elemento.classList.remove('p1', 'p2', 'p3', 'p4', 'p5', 'p6', 'p7')
@@ -58,24 +62,35 @@
 				})
 			}
 
+			// Ejecución de la clase que asigna clases a los elementos del carrusel
 			asignarClases()
 
+			// setInterval es un timer, es decir, es una función que ejecuta cada cierto tiempo
 			setInterval(function(){
+				// Extrae el último elemento del arreglo y lo guarda en una variable
 				const elementoExtraido = arregloClases.pop()
+				// Agrega el elemento extraído arriba y lo agrega al comienzo del arreglo
 				arregloClases.unshift(elementoExtraido)
+				// Ejecución de la clase que asigna clases a los elementos del carrusel
 				asignarClases()
 			}, 2000)
 
 			btnIzquierda.addEventListener('click', function(){
+				// Extrae el primer elemento del arreglo y lo guarda en una variable
 				const elementoExtraido = arregloClases.shift()
+				// Agrega el elemento extraído arriba y lo agrega al final del arreglo
 				arregloClases.push(elementoExtraido)
 				console.log(arregloClases)
+				// Ejecución de la clase que asigna clases a los elementos del carrusel
 				asignarClases()
 			})
 			btnDerecha.addEventListener('click', function(){
+				// Extrae el último elemento del arreglo y lo guarda en una variable
 				const elementoExtraido = arregloClases.pop()
+				// Agrega el elemento extraído arriba y lo agrega al comienzo del arreglo
 				arregloClases.unshift(elementoExtraido)
 				console.log(arregloClases)
+				// Ejecución de la clase que asigna clases a los elementos del carrusel
 				asignarClases()
 			})
 

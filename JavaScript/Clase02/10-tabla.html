@@ -43,6 +43,8 @@
 
 			const tbody = document.querySelector("tbody")
 
+			// Los métodos de los arreglos se pueden concatenar para que se ejecuten secuencialmente usando cada uno el arreglo resultante del anterior.
+
 			const arreglo = arrNombres
 							.sort((elemA, elemB) => elemA < elemB)
 							.map(item => item.toUpperCase())
