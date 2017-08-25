@@ -22,6 +22,11 @@ window.addEventListener("keydown", evt => {
 			item.classList.remove("presionada")
 		})
 		tecla.classList.add("presionada")
+
+		const audioAEjecutar = document.querySelector(`audio[data-tecla="${teclaPresionada}"]`)
+
+		audioAEjecutar.currentTime = 0
+		audioAEjecutar.play()
 	}
 	/*
 		a 65

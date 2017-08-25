@@ -1,0 +1,56 @@
+* {box-sizing: border-box}
+
+html, body {
+	margin:0;
+	padding:0
+}
+
+div.mascara {
+	width:500px;
+	height:500px;
+	margin: 50px auto;
+	background-color: black;
+	border: 5px solid goldenrod;
+	border-radius: 50%;
+	position:relative;
+}
+
+div.segundero {
+	width: 245px;
+	height: 6px;
+	background: linear-gradient(red, orange);
+	position: absolute;
+	top: 245px;
+	left: 245px;
+	margin-top: -3px;
+	transform: rotate(-90deg);
+	transform-origin: left center;
+}
+
+div.minutero {
+	width: 180px;
+	height: 6px;
+	background: blue;
+	position: absolute;
+	top: 245px;
+	left: 245px;
+	margin-top: -3px;
+	transform: rotate(-90deg);
+	transform-origin: left center;
+}
+
+div.horario {
+	width: 100px;
+	height: 6px;
+	background: green;
+	position: absolute;
+	top: 245px;
+	left: 245px;
+	margin-top: -3px;
+	transform: rotate(-90deg);
+	transform-origin: left center;
+}
+
+div.transicionManecillas {
+	transition: transform 1s linear
+}
