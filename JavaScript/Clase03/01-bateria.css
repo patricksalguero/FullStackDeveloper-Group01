@@ -29,6 +29,7 @@ a.tecla {
 	border: 1px solid yellow;
 	font-size:30px;
 	font-family: Roboto;
+	transition: box-shadow 70ms
 }
 
 a.tecla:link,
@@ -39,4 +40,8 @@ a.tecla:hover {
 	text-transform: uppercase;
 	color: white;
 	text-align: center;
+}
+
+a.tecla.presionada {
+	box-shadow: 0 0 15px yellow
 }
