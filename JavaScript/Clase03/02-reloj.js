@@ -26,7 +26,7 @@ const moverManecillas = () => {
 	horario.style.transform = `rotate(${anguloHorario}deg)` 
 }
 
-// Cada segundo modifica el ángulo de cada manecilla cada segundo
+// Cada segundo modifica el ángulo de cada manecilla
 setInterval(()=>{
 	anguloSegundero += dAngSegundero
 	anguloMinutero += dAngMinutero
