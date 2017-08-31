@@ -1,7 +1,9 @@
+// Declaración de un json vacío
 const usuario = {}
 
 const nombre = 'Sergio'
 
+// Los json contienen pares-valor (propiedad, valor)
 const persona = {
 	nombre,
 	apellido: 'Hidalgo',
@@ -38,8 +40,8 @@ arregloPersonas.push(persona02)
 
 console.log(persona02.nombre)
 
+// Se pueden crear propiedades dinámicamente
 persona02.nombre = "Javier"
-
 persona02.redes.facebook = "https://facebook.com/persona02"
 
 console.log(persona02["nombre"])
@@ -47,7 +49,7 @@ console.log(persona02.redes["facebook"])
 console.log(persona02["redes"]["facebook"])
 
 // persona02 = {nombre: "Sergio"} // Esto da error
-
+// Lee los índices de cada propiedad del json
 for(propiedad in persona02) {
 	console.log(propiedad)
 }

@@ -11,6 +11,8 @@ const instagram = misRedes.instagram
 const youtube = misRedes.youtube
 */
 
+// Desestructuración de un json en variables.
+// Las variables pueden tener valores por defecto
 const {twitter, linkedin, facebook = "tampoco tiene facebook", youtube = "no tiene youtube"} = misRedes
 
 
