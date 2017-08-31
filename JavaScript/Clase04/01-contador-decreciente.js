@@ -34,6 +34,16 @@ const mostrarTiempoFaltante = () => {
 	const tiempoFaltante = tiempoParaNavidad - tiempoTranscurrido
 	
 	// Determina los días, horas, minutos y segundos faltantes para llegar a la fecha objetivo
+	/*
+		Math.round(3.6) = 4
+		Math.round(3.2) = 3
+
+		Math.floor(3.6) = 3
+		Math.floor(3.2) = 3
+		
+		Math.ceil(3.6) = 4
+		Math.ceil(3.2) = 4
+	*/
 	const diasFaltantes = Math.floor(tiempoFaltante / (24*60*60*1000))
 	const horasFaltantes = Math.floor((tiempoFaltante - diasFaltantes*24*60*60*1000) / (60*60*1000))
 	const minutosFaltantes = Math.floor((tiempoFaltante - diasFaltantes*24*60*60*1000 - horasFaltantes*60*60*1000) / (60*1000))
