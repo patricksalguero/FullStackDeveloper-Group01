@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<title>Document</title>
+	<style>
+		:root {
+			--grayscale: 0%;
+			--blur: 0px;
+			--sepia: 0%;
+		}
+
+		img {
+			display: block;
+			margin:10px auto;
+			filter: grayscale(var(--grayscale)) blur(var(--blur)) sepia(var(--sepia))
+		}
+		input {
+			margin:10px auto;
+			width:60%;
+			display: block;
+		}
+	</style>
+</head>
+<body>
+		<img src="img/300.jpg" alt="300 - La Película">
+		<input type="range" id="grayscale" min="0" max="100" data-sizing="%" value="0">
+		<input type="range" id="blur" min="0" max="10" data-sizing="px" value="0">
+		<input type="range" id="sepia" min="0" max="100" data-sizing="%" value="0">
+
+		<script>
+			const inputs = document.querySelectorAll("input")
+
+			inputs.forEach(item => {
+				/*item.addEventListener("change", function(ev){
+					const valor = this.value
+					const unidades = this.dataset.sizing
+					const propiedad = this.getAttribute("id")
+
+					document.documentElement.style.setProperty(`--${propiedad}`,`${valor}${unidades}`)
+				})*/
+
+				item.addEventListener("mousemove", function(ev){
+					const valor = this.value
+					const unidades = this.dataset.sizing
+					const propiedad = this.getAttribute("id")
+
+					document.documentElement.style.setProperty(`--${propiedad}`,`${valor}${unidades}`)
+				})
+			})
+		</script>
+	
+</body>
+</html>
