@@ -31,9 +31,15 @@
 		<input type="range" id="sepia" min="0" max="100" data-sizing="%" value="0">
 
 		<script>
+			// Referencia a todas las etiquetas "input"
 			const inputs = document.querySelectorAll("input")
 
+
+			// Recorrido de todas las etiquetas input para agregarles el evento "mousemove"
 			inputs.forEach(item => {
+				// Probamos usando solo el evento "change", pero este solo mostraba el valor de la etiqueta input una vez que terminabamos de arrastrar el slide.
+
+
 				/*item.addEventListener("change", function(ev){
 					const valor = this.value
 					const unidades = this.dataset.sizing
@@ -42,11 +48,18 @@
 					document.documentElement.style.setProperty(`--${propiedad}`,`${valor}${unidades}`)
 				})*/
 
+				// Usar el evento "mousemove" resultó más eficiente
 				item.addEventListener("mousemove", function(ev){
 					const valor = this.value
+					// this.dataset permite acceder a los atributos que empiecen con le prefijo "data-"
 					const unidades = this.dataset.sizing
 					const propiedad = this.getAttribute("id")
 
+					/*
+						document.body retorna una referencia a la etiqueta <body>
+
+						document.documentElement retorna una referencia a la etiqueta <html>
+					*/
 					document.documentElement.style.setProperty(`--${propiedad}`,`${valor}${unidades}`)
 				})
 			})
