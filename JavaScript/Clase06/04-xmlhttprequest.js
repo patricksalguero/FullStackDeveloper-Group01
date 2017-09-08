@@ -71,7 +71,7 @@ const ftnGrabar = () =>{
 			cb()
 		})
 		.catch(error => {
-			console.log(error.error, error.codigo)
+			console.log(error)
 		})
 }
 
@@ -87,7 +87,7 @@ const ftnEliminar = id =>{
 			cb()
 		})
 		.catch(error => {
-			console.log(error.error, error.codigo)
+			console.log(error)
 		})
 }
 
@@ -143,7 +143,7 @@ const ftnListar = () => {
 			cb(respuesta)
 		})
 		.catch(error => {
-			console.log(error.error, error.codigo)
+			console.log(error)
 		})
 }
 
