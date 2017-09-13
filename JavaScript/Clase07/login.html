@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<title>Document</title>
+</head>
+<body>
+	<h1>Login</h1>
+	<form>
+		<input type="text" id="usuario"><br>
+		<input type="password" id="contrasena"><br>
+		<button type="button">Ingresar</button>
+	</form>
+	
+	<script>
+		const inputUsuario = document.querySelector("#usuario")
+		const inputContrasena = document.querySelector("#contrasena")
+		const boton = document.querySelector("button")
+
+		function urlencoded(fd) {
+			const params = new URLSearchParams()
+			for(let par of fd.entries()){
+				params.append(par[0], par[1])
+			}
+
+			return params.toString()
+		}
+
+		boton.addEventListener("click", function(){
+			const usuario = inputUsuario.value
+			const contrasena = inputContrasena.value
+
+			const obj = new XMLHttpRequest()
+			obj.onreadystatechange = function(){
+				if(this.readyState == 4 && this.status == 200){
+					console.log(this.responseText)
+					console.log(JSON.parse(this.responseText))
+				}
+			}
+
+			const formData = new FormData()
+			formData.append("usuario", usuario)
+			formData.append("contrasena", contrasena)
+
+			obj.open("post", "/auth", true)
+			obj.setRequestHeader("Content-type", "application/x-www-form-urlencoded")
+			obj.send(urlencoded(formData))
+		})
+	</script>
+
+
+</body>
+</html>
