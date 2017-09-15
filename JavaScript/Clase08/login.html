@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<title>Document</title>
+
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/css/bootstrap.min.css">
+
+</head>
+<body>
+
+	<div class="container">
+		<div class="row">
+			<div class="card col-6">
+				<h4 class="card-header">Login</h4>
+				<div class="card-body">
+					<form>
+						<div class="form-group">
+							<input type="text" class="form-control" id="usuario" placeholder="Ingrese su usuario">
+						</div>
+						<div class="form-group">
+							<input type="password" class="form-control" id="contrasena" placeholder="Ingrese su contraseña">
+						</div>
+						<div class="form-group">
+							<a href="#" class="btn btn-success btn-block" id="boton-login">Ingresar</a>
+						</div>
+					</form>
+					<a href="#" class="btn btn-block btn-primary" id="boton-listar">Listar</a>
+					<a href="#" class="btn btn-block btn-info" id="boton-cerrar">Cerrar sesión</a>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<script>
+		const inputUsuario = document.querySelector("#usuario")
+		const inputContrasena = document.querySelector("#contrasena")
+		const botonLogin = document.querySelector("#boton-login")
+		const botonListar = document.querySelector("#boton-listar")
+		const botonCerrar = document.querySelector("#boton-cerrar")
+
+		const apiRestBase = "http://localhost:1370"
+		const apiRestLogin = `${apiRestBase}/auth`
+		const apiRestListar = `${apiRestBase}/listar`
+
+		function urlencoded(fd) {
+			const parametros = new URLSearchParams()
+
+			for(let parametro of fd.entries()){
+				parametros.append(parametro[0], parametro[1])
+			}
+
+			return parametros.toString()
+		}
+
+		botonLogin.addEventListener("click", function(e){
+			e.preventDefault()
+
+			const usuario = inputUsuario.value
+			const contrasena = inputContrasena.value
+
+			const formData = new FormData()
+			formData.append("usuario", usuario)
+			formData.append("contrasena", contrasena)
+
+			const headers = new Headers()
+			headers.append("content-type", "application/x-www-form-urlencoded")
+
+			fetch(apiRestLogin,{
+				method: "post",
+				body: urlencoded(formData),
+				headers
+			})
+			.then(respuesta => respuesta.json())
+			.then(respuesta => {
+				localStorage.setItem("token", respuesta.token)
+			})
+			.catch(error => {
+				console.log(error)
+			})
+		})
+
+		botonListar.addEventListener("click", function(e){
+			e.preventDefault()
+
+			const token = localStorage.getItem("token")
+
+			const headers = new Headers()
+			headers.append("Authorization", `Bearer ${token}`)
+
+			fetch(apiRestListar, {
+				method: "get",
+				headers
+			})
+			.then(respuesta => respuesta.json())
+			.then(respuesta => {
+				console.log(respuesta)
+			})
+			.catch(error => {
+				console.log(error)
+			})
+		})
+
+		botonCerrar.addEventListener("click", function(e){
+			e.preventDefault()
+
+			localStorage.removeItem("token")
+		})
+
+
+	</script>
+
+
+	
+</body>
+</html>

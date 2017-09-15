@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<title>Document</title>
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/css/bootstrap.min.css">
+</head>
+<body>
+
+		<div class="container">
+				<div class="row">
+					<div class="card col-6" id="formRegistroLogin">
+						<h4 class="card-header">Registro / Login</h4>
+						<div class="card-body">
+							<form>
+								<div class="form-group">
+									<input type="email" class="form-control" id="correo" placeholder="Ingrese su correo">
+								</div>
+								<div class="form-group">
+									<input type="password" class="form-control" id="contrasena" placeholder="Ingrese su contraseña">
+								</div>
+								<div class="form-group">
+									<a href="#" class="btn btn-primary btn-block" id="boton-registro">Registro</a>
+									<a href="#" class="btn btn-success btn-block" id="boton-login">Login</a>
+								</div>
+							</form>
+						</div>
+					</div>
+					<div class="card col-6" id="formInventario">
+						<h4 class="card-header">Inventario</h4>
+						<button class="btn btn-danger" id="boton-cerrar">Cerrar Sesión</button>
+						<form>
+							<div class="form-group">
+								<input type="text" class="form-control" id="nombreProducto" placeholder="Ingrese el nombre">
+							</div>
+							<div class="form-group">
+								<a href="#" class="btn btn-block btn-primary" id="boton-ingresar-modificar">Ingresar/Modificar</a>
+							</div>
+						</form>
+						<table class="table table-hover table-striped">
+							<thead>
+								<tr>
+									<th>Producto</th>
+									<th>Acciones</th>
+								</tr>
+							</thead>
+							<tbody>
+
+							</tbody>
+						</table>
+					</div>
+				</div>
+			</div>
+
+
+		<script src="https://www.gstatic.com/firebasejs/4.3.1/firebase.js"></script>
+	
+		<script src="03-firebase.js"></script>
+
+
+</body>
+</html>
