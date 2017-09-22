@@ -1,0 +1,14 @@
+<button [disabled]="!permitir" (click)="agregarServidor()">Agregar servidor</button>
+
+<input type="text" (input)="caracterAgregado($event)">
+<p>{{textoIngresado}}</p>
+
+<input type="text" [(ngModel)]="textoIngresado">
+<h2>{{textoIngresado}}</h2>
+
+<p [innerText]="texto"></p>
+
+<app-servidor></app-servidor>
+<app-servidor></app-servidor>
+<app-servidor></app-servidor>
+<app-servidor></app-servidor>

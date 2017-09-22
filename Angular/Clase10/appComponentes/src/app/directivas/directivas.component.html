@@ -1,0 +1,24 @@
+<input type="text" [(ngModel)]="nombreServidor">
+<button (click)="agregarServidor()">Agregar Servidor</button>
+<p *ngIf="(listaServidores.length == 0) else hayServidores">No hay servidores</p>
+<ng-template #hayServidores>
+	<p [ngStyle]="{backgroundColor: obtenerColor(), fontFamily: obtenerFamilia() }">
+		Hay Servidores
+	</p>
+</ng-template>
+<p [ngClass]="{sombra: this.listaServidores.length > 2}">Módulo de Servidores</p>
+
+<ul>
+	<li *ngFor="let servidor of listaServidores">
+		{{servidor}}
+	</li>
+</ul>
+
+<!--
+	<app-servidor *ngFor="let servidor of listaServidores"></app-servidor>
+-->
+
+<!--
+	<p>{{existencia()}}</p>
+	<p>{{this.listaServidores.length == 0 ? "No hay servidores" : "Sí hay servidores"}}</p>
+-->
