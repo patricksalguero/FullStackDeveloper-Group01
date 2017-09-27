@@ -1,8 +1,10 @@
 
 <div class="col-8">
-	<app-botonera (dedicadoCreado)="onDedicadoCreado($event)"></app-botonera>
-	<!--
-		servidor = {tipo:..., uso:..., descripcion:...}
-	 -->
-	<app-servidor *ngFor="let servidor of servidores" [tipo]="servidor.tipo" [uso]="servidor.uso" [descripcion]="servidor.descripcion"></app-servidor>
+	<app-botonera 
+		(dedicadoCreado)="onDedicadoCreado($event)"
+		(compartidoCreado)="onCompartidoCreado($event)"
+		(vpsCreado)="onVPSCreado($event)"
+	></app-botonera>
+
+	<app-listado [listadoServidores]="servidores"></app-listado>
 </div>
