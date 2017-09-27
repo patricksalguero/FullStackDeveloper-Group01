@@ -1,0 +1,9 @@
+<div class="card">
+		<div class="card-body">
+			<input type="text" placeholder="Uso del servidor" class="form-control" [(ngModel)]="uso">
+			<input type="text" placeholder="Descripción del servidor" class="form-control" [(ngModel)]="descripcion">
+			<button class="btn btn-success" (click)="onAgregarServidorDedicado()">Agregar Servidor Dedicado</button>
+			<button class="btn btn-warning" (click)="onAgregarServidorCompartido()">Agregar Servidor Compartido</button>
+			<button class="btn btn-primary" (click)="onAgregarServidorVPS()">Agregar Servidor VPS</button>
+		</div>
+	</div>
