@@ -1,0 +1,10 @@
+
+<div class="col-8">
+	<app-botonera 
+		(dedicadoCreado)="onDedicadoCreado($event)"
+		(compartidoCreado)="onCompartidoCreado($event)"
+		(vpsCreado)="onVPSCreado($event)"
+	></app-botonera>
+
+	<app-listado [listadoServidores]="servidores"></app-listado>
+</div>

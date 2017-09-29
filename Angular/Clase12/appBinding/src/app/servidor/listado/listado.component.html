@@ -1,0 +1,10 @@
+	 <app-servidor *ngFor="let servidor of servidores; let indice = index" [indice]="indice">
+		 <h3>{{servidor.uso +' - ' + servidor.descripcion}}</h3>
+		 <p>
+			 {{servidor.tipo}}
+			 <br>
+			 {{servidor.uso}}
+			 <br>
+			 {{servidor.descripcion}}
+		 </p>
+	 </app-servidor>
