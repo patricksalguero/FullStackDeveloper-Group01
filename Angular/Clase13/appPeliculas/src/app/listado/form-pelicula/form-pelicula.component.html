@@ -1,0 +1,7 @@
+<form>
+  <input type="text" placeholder="Ingrese el título" #titulo>
+  <br>
+  <input type="text" placeholder="Ingrese la sinópsis" #sinopsis>
+  <br>
+  <button (click)="agregar(titulo.value, sinopsis.value)">Ingresar nueva</button>
+</form>
