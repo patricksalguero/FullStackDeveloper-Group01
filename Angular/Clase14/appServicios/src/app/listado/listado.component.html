@@ -1,0 +1,4 @@
+<section>
+  <app-formulario (peliculaAgregada)="onPeliculaAgregada($event)"></app-formulario>
+  <app-pelicula *ngFor="let pelicula of peliculas" [pelicula]="pelicula" (click)="seleccionarPelicula(pelicula)"></app-pelicula>
+</section>

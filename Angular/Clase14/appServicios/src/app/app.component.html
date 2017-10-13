@@ -1,0 +1,8 @@
+<article class="contenedor">
+  <div>
+    <app-listado [peliculas]="peliculas" (nuevaPelicula)="onNuevaPelicula($event)" (seleccion)="peliculaSeleccionada=$event"></app-listado>
+  </div>
+  <div>
+    <app-detalle [pelaSeleccionada]="peliculaSeleccionada" *ngIf="peliculaSeleccionada"></app-detalle>
+  </div>
+</article>

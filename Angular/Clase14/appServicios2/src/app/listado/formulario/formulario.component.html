@@ -1,0 +1,19 @@
+<div>
+  <form>
+    <div>
+      <input type="text" placeholder="Ingrese el título" #titulo>
+    </div>
+    <div>
+      <textarea cols="30" rows="10" placeholder="Ingrese la sinópsis" #sinopsis></textarea>
+    </div>
+    <div>
+      <input type="text" placeholder="Ingrese el director" #director>
+    </div>
+    <div>
+      <input type="number" placeholder="Ingrese el año" #anno>
+    </div>
+    <div>
+      <button type="button" (click)="agregarPela(titulo.value, sinopsis.value, director.value, anno.value)">Agregar película</button>
+    </div>
+  </form>
+</div>
