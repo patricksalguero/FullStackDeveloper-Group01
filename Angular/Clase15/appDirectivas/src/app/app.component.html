@@ -1,0 +1,13 @@
+<input type="text" appFecha placeholder="Ingresa tu fecha de nacimiento" />
+
+<div app-directiva>Texto</div>
+
+<div appDirectivaAvanzada="navy" [colorPorDefecto]="'white'" colorHover="magenta">Texto de directiva</div>
+
+<div appDirectivaHtml>Texto Directiva HTML</div>
+
+<select appSelectDepartamentos [lista]="[
+'Lima', 'Arequipa', 'La Libertad', 'Junín', 'Cuzco'
+]"></select>
+
+<button appEspera [procesando]="ejecutando" (click)="ejecutando = !ejecutando">Enviar</button>

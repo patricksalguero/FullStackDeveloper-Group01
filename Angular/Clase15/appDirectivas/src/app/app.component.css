@@ -1,0 +1,19 @@
+div.circulo {
+    width: 100px;
+    height: 100px;
+    background-color: brown;
+    border-radius: 50%
+}
+
+button {
+    width: 120px;
+    height: 40px;
+    transition: all .7s
+}
+
+.espera {
+    background-image: url(../assets/cargador.gif);
+    background-repeat: no-repeat;
+    background-size: contain;
+    width: 160px
+}
