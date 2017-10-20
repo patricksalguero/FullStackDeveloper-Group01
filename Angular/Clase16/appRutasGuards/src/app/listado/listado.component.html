@@ -1,0 +1,2 @@
+<a href="#" routerLink="/agregar">Agregar</a>
+<app-servidor *ngFor="let servidor of lista" [servidor]="servidor" (click)="irADetalle(servidor.id)"></app-servidor>

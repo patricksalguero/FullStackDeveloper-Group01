@@ -1,0 +1,9 @@
+<form #f="ngForm">
+  <div><input name="id" type="number" required placeholder="Ingrese el id" #id></div>
+  <div><input name="nombre" type="text" required placeholder="Ingrese el nombre" #nombre></div>
+  <div><input name="area" type="text" required placeholder="Ingrese el área" #area></div>
+  <div><textarea name="descripcion" required placeholder="Ingrese la descripción" #descripcion cols="30" rows="10"></textarea></div>
+  <div><input name="estado" required type="text" placeholder="Ingrese el estado" #estado></div>
+  <div><input name="responsable" required type="text" placeholder="Ingrese el responsable" #responsable></div>
+  <div><button [disabled]="!f.valid" (click)="grabar(id.value, nombre.value, area.value, descripcion.value, estado.value, responsable.value)">Guardar</button></div>
+</form>
