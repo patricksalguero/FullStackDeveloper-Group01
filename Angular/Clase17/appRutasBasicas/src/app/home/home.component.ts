@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { AuthService } from '../auth/auth.service';
+import { AuthService, IUsuario } from '../auth/auth.service';
 import { Router } from '@angular/router';
 
 @Component({
@@ -11,9 +11,16 @@ export class HomeComponent implements OnInit {
   usuario: string
   contrasena: string
 
+  logueado: IUsuario
+
   constructor(private authService: AuthService, private router: Router) { }
 
   ngOnInit() {
+    this.logueado = this.authService.datosUsuario()
+    this.authService.cambioEstado
+      .subscribe((usuario: IUsuario) => {
+        this.logueado = usuario
+      })
   }
 
   loguearse(){

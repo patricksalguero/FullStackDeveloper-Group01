@@ -19,7 +19,7 @@ export class AppComponent implements OnInit {
 
     this.authService.cambioEstado
       .subscribe( (usuario: IUsuario) => {
-        this.logueado = undefined
+        this.logueado = usuario
       })
 
   }

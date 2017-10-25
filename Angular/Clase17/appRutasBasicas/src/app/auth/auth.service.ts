@@ -30,6 +30,8 @@ export class AuthService {
       this.estaAutenticado = false
     }
 
+    this.cambioEstado.emit(this.usuarioLogueado)
+
     return this.estaAutenticado
 
   }
