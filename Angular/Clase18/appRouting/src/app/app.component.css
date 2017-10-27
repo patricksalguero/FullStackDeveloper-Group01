@@ -1,0 +1,10 @@
+a, a:link, a:hover, a:active, a:visited {
+    font-family: Verdana;
+    font-size: 20px;
+    color: black
+}
+
+a.activo, a.activo:link, a.activo:hover, 
+a.activo:active, a.activo:visited {
+    color: red
+}

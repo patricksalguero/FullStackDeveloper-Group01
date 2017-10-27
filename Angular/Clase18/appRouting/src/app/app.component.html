@@ -1,0 +1,18 @@
+<h1>Ejemplo de rutas básicas</h1>
+<h3>{{fecha}}</h3>
+<ul>
+  <li>
+    <a routerLinkActive="activo" [routerLinkActiveOptions]="{exact: true}" routerLink="/">Home</a>
+  </li>
+  <li>
+    <a routerLinkActive="activo" [routerLinkActiveOptions]="{exact: true}" routerLink="/correos">Correos</a>
+  </li>
+  <li>
+    <a routerLinkActive="activo" routerLink="/correos/editar">Editar</a>
+  </li>
+  <li>
+    <a routerLinkActive="activo" routerLink="/correos/detalle">Detalle</a>
+  </li>
+</ul>
+<button (click)="logout()" *ngIf="logueado">Logout</button>
+<router-outlet></router-outlet>
