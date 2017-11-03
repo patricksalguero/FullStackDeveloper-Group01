@@ -1,0 +1,22 @@
+ul {
+    width:95%;
+    margin: 20px auto;
+    background-color: rgb(124, 143, 182);
+    border-radius: 4px
+}
+
+li {
+    display: inline-block
+}
+
+a, a:link, a:visited, a:active {
+    display: block;
+    padding: 10px;
+    color: #fcf6f6;
+    text-decoration: none;
+    font-family: Roboto;
+    font-size: 16px
+}
+a:hover {
+    text-decoration: underline
+}
