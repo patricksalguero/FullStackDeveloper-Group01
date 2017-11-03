@@ -1,0 +1,7 @@
+div {
+    display: flex;
+}
+
+section {
+    flex: 1 1 1
+}

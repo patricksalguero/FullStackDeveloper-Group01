@@ -1,0 +1,10 @@
+div {
+    width: 70%;
+    background-color: rgb(159, 214, 231);
+    border-radius: 5px;
+    margin: 10px 0 10px 0;
+    font-family: Roboto;
+    font-size: 15px;
+    color: rgb(52, 52, 172);
+    padding: 10px;
+}

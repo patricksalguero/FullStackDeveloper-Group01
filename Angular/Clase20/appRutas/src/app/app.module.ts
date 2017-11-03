@@ -9,6 +9,8 @@ import { DetalleComponent } from './detalle/detalle.component';
 import { EditarComponent } from './editar/editar.component';
 import { CabeceraComponent } from './cabecera/cabecera.component';
 import { AppRouting } from './app-routing.module';
+import { ServidoresService } from './servidores.service';
+import { ReducidoPipe } from './reducido.pipe';
 
 @NgModule({
   declarations: [
@@ -18,13 +20,14 @@ import { AppRouting } from './app-routing.module';
     ServidorComponent,
     DetalleComponent,
     EditarComponent,
-    CabeceraComponent
+    CabeceraComponent,
+    ReducidoPipe
   ],
   imports: [
     BrowserModule,
     AppRouting
   ],
-  providers: [],
+  providers: [ServidoresService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

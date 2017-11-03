@@ -1,3 +1,8 @@
-<p>
-  listado works!
-</p>
+<div>
+    <section>
+        <app-servidor (click)="mostrarDetalle(servidor.id)" *ngFor="let servidor of servidores | async" [servidor]="servidor"></app-servidor>
+    </section>
+    <section>
+        <router-outlet></router-outlet>
+    </section>
+</div>
