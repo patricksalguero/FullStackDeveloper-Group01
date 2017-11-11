@@ -10,10 +10,9 @@ export class ServidoresApiService {
   constructor(private http: HttpClient, private auth: AutenticacionService) { }
 
   listado(): Observable<IServidor[]> {
-    const token = this.auth.obtenerToken()
+	const token = this.auth.obtenerToken()
 
-    const headers: HttpHeaders = new HttpHeaders()
-    headers.append("Authorization", `Bearer ${token}`)
+	const headers: HttpHeaders = new HttpHeaders({"Authorization": `Bearer ${token}`})
 
     return this.http.get<IServidor[]>("http://localhost:1337/servidores", { headers: headers,
       observe: "body", responseType: "json"
