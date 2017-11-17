@@ -1,0 +1,12 @@
+<form #f="ngForm" (ngSubmit)="agregarJugador()">
+	<input type="text" name="nombre" [(ngModel)]="nombre" required><br>
+	<input type="text" name="pais" [(ngModel)]="pais" required><br>
+	<button [disabled]="!f.valid">Agregar</button>
+</form>
+
+<div *ngFor="let jugador of listaJugadores | async" [ngClass]="{peruano: jugador.pais==='Perú', otro: jugador.pais!='Perú'}">
+	<p>{{jugador.nombre}}</p>
+	<p>{{jugador.pais}}</p>
+	<button (click)="actualice(jugador)">Cambio</button>
+	<button (click)="eliminar(jugador.id)">Eliminar</button>
+</div>

@@ -8,14 +8,12 @@ import { ServidoresApiService } from './servidores-api.service';
 import { ServidoresService } from './servidores.service';
 import { FormularioComponent } from './formulario/formulario.component';
 import { FormsModule } from '@angular/forms';
-import { MaterialModule } from '../material/material.module';
 
 @NgModule({
   imports: [
     CommonModule,
     FormsModule,
-    ServidoresRoutingModule,
-    MaterialModule
+    ServidoresRoutingModule
   ],
   declarations: [ListadoComponent, EditarComponent, NuevoComponent, FormularioComponent],
   providers: [

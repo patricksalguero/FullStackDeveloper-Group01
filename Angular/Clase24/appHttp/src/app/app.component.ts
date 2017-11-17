@@ -19,7 +19,7 @@ interface IUsuario {
 })
 export class AppComponent implements OnInit {
 
-  private estaAutenticado: boolean = false
+  estaAutenticado: boolean = false
 
   constructor(private auth: AutenticacionService) {}
 
@@ -27,7 +27,8 @@ export class AppComponent implements OnInit {
     this.auth.cambioEstado
       .subscribe(
         (data: boolean) => {
-          this.estaAutenticado = data
+		  this.estaAutenticado = data
+		  console.log(this.estaAutenticado)
         }
       )
   }
