@@ -1,0 +1,19 @@
+<mat-card class="cardLogin" *ngIf="!estaAutenticado">
+  <mat-card-title>Login</mat-card-title>
+  <mat-card-content>
+    <form (ngSubmit)="loguear()" #f="ngForm">
+
+      <mat-form-field class="fullwidth">
+          <input matInput type="email" name="email" [(ngModel)]="email" placeholder="Ingrese su correo" required>
+      </mat-form-field>
+
+      <mat-form-field class="fullwidth">
+          <input matInput type="password" name="password" [(ngModel)]="password" placeholder="Ingrese su contraseña" required>
+      </mat-form-field>
+
+      <mat-action-row>
+          <button type="submit" [disabled]="!f.valid" mat-raised-button color="primary">Login</button>
+      </mat-action-row>      
+    </form>
+  </mat-card-content>
+</mat-card>

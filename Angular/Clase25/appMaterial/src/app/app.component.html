@@ -1,0 +1,31 @@
+<mat-sidenav-container fullscreen>
+    <mat-sidenav #menu>
+        <app-cabecera *ngIf="estaAutenticado"></app-cabecera>
+    </mat-sidenav>
+    <mat-toolbar color="primary" *ngIf="estaAutenticado">
+        <button (click)="menu.open()" mat-icon-button>
+            <mat-icon>
+                menu
+            </mat-icon>
+            {{titulo}}
+        </button>
+        <span class="espaciadora"></span>
+        <button mat-icon-button [matMenuTriggerFor]="menuVer">
+            <mat-icon>more_vert</mat-icon>
+        </button>
+        <mat-menu #menuVer="matMenu">
+            <button mat-menu-item (click)="logout()">
+                <mat-icon>lock_open</mat-icon>
+                Cerrar sesión
+            </button>
+        </mat-menu>
+
+    </mat-toolbar>
+
+    <div class="contenido">
+        <router-outlet></router-outlet>
+    </div>
+
+</mat-sidenav-container>
+
+

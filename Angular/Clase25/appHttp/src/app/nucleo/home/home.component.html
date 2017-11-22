@@ -1,0 +1,6 @@
+
+<form (ngSubmit)="loguear()" #f="ngForm" *ngIf="!estaAutenticado">
+  <input type="email" name="email" [(ngModel)]="email" placeholder="Ingrese su correo" required><br>
+  <input type="password" name="password" [(ngModel)]="password" placeholder="Ingrese su contraseña" required><br>
+  <button type="submit" [disabled]="!f.valid">Login</button>
+</form>

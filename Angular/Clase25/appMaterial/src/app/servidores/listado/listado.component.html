@@ -1,0 +1,5 @@
+<button (click)="agregarServidor()">Agregar</button>
+<p *ngFor="let servidor of servidores" (click)="seleccionar(servidor.idServidor)">
+  Nombre: {{servidor.nombre}}<br>
+  Descripción: {{servidor.descripcion}}
+</p>
