@@ -1,0 +1,8 @@
+mixin formulario(tituloFormulario,accion)
+	form(method="post",action=accion)
+		h2= tituloFormulario
+		input(type="text",placeholder="Ingrese su usuario",name="usuario")
+		br
+		input(type="password",placeholder="Ingrese su contraseña",name="contrasena")
+		br
+		button(type="submit") Registrar
